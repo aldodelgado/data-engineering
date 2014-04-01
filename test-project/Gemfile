@@ -23,6 +23,9 @@ gem 'sass-rails', '~> 4.0.0'
 # HTML Abstraction Markup Language - A Markup Haiku http://haml.info
 gem 'haml'
 
+# Twitter Bootstrap 3.1.1 for Rails Asset Pipeline
+gem 'twitter-bootstrap-rails'
+
 # Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup
 gem 'simple_form'
 
