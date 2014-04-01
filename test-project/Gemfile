@@ -67,6 +67,7 @@ group :development, :test do
 
   # Better error page for Rails and other Rack apps
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'cucumber-rails', :require => false, git: 'https://github.com/cucumber/cucumber-rails.git'
   gem 'selenium-webdriver'
   gem 'awesome_print'
