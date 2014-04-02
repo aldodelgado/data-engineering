@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file: MyString
+  process: 
+  created_by: 1
+
+two:
+  file: MyString
+  process: 
+  created_by: 1

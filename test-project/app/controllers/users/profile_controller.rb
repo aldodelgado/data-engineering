@@ -6,7 +6,7 @@ class Users::ProfileController < UsersController
     if user.update_attributes(params[:user])
       sign_in(current_user, :bypass => true)
       flash[:notice] = t(:profile_was_successfully_updated)
-      redirect_to users_contests_path
+      redirect_to users_root_path
     else
       render :edit
     end

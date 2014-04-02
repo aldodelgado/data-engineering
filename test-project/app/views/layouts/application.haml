@@ -37,23 +37,38 @@
           %a.brand{href: "/"} Living Social Test
           .container.nav-collapse
             %ul.nav
-              %li= link_to 'Home', root_path
-              %li= link_to "Login", "/path2"
-              %li= link_to "Sign Up", "/path3"
+              - if current_user
+                %li= link_to "Home", users_root_path
+                %li= link_to "Sign Out", destroy_user_session_path
+                %li= link_to "Profile", edit_user_registration_path
+                %li= link_to "Upload File", new_users_upload_path
+              - else
+                %li= link_to "Home", root_path
+                %li= link_to "Sign In", new_user_session_path
+                %li= link_to "Sign Up", new_user_registration_path
           / /.nav-collapse
     .container
       .row
         .span9
           = bootstrap_flash
           = yield
+          - if Rails.env == 'development'
+            %br
+            = params
         .span3
           .well.sidebar-nav
             %h3 Sidebar
             %ul.nav.nav-list
               %li.nav-header Sidebar
-              %li= link_to "Home", root_path
-              %li= link_to "Login", "/path2"
-              %li= link_to "Sign Up", "/path3"
+              - if current_user
+                %li= link_to "Home", users_root_path
+                %li= link_to "Sign Out", destroy_user_session_path
+                %li= link_to "Profile", edit_user_registration_path
+                %li= link_to "Upload File", new_users_upload_path
+              - else
+                %li= link_to "Home", root_path
+                %li= link_to "Sign In", new_user_session_path
+                %li= link_to "Sign Up", new_user_registration_path
           / /.well
         / /span
       / /row

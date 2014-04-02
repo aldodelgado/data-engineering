@@ -7,5 +7,13 @@ TestProject::Application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks'
   }
 
+  authenticate :user do
+    namespace :users do
+      resources :uploads
+      resources :profile, :only => [:edit, :update]
+      root :to => 'users#index'
+    end
+  end
+
   root 'pages#index'
 end
